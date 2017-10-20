@@ -1,22 +1,26 @@
 {
-    "name": "gaetanroger/base-slim3-framework",
-    "description": "Base Slim PHP 3 framework",
+    "name": "gaetanroger/minimal-slim3-framework",
+    "description": "Minimal Slim PHP 3 framework",
     "minimum-stability": "stable",
     "license":           "MIT",
     "version":           "0.1",
-    "time":              "2017-09-10",
+    "time":              "2017-10-20",
     "authors": [
         {
             "name": "Gaétan ROGER",
-            "email": "gaetan.roger@unistra.fr",
+            "email": "gaetanroger.fr@gmail.com",
             "homepage": "https://gaetanroger.fr"
         }
     ],
     "require": {},
     "autoload":          {
         "psr-4": {
-            "GrBaseFramework\\": "src/",
-            "GrBaseFrameworkTest\\": "test/"
+            "Gaetanroger\\MinimalSlim3Framework\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gaetanroger\\MinimalSlim3FrameworkTest\\": "test/"
         }
     }
 }
