@@ -1,6 +1,6 @@
 <?php
 
-namespace Gaetanroger\MinimalSlim3Framework;
+namespace Gaetanroger\MinimalController;
 
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;

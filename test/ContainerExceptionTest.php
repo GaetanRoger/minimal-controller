@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Gaetanroger\MinimalSlim3FrameworkTest;
+namespace Gaetanroger\MinimalControllerTest;
 
-use Gaetanroger\MinimalSlim3Framework\ContainerException;
+use Gaetanroger\MinimalController\ContainerException;
 use PHPUnit\Framework\TestCase;
 
 
@@ -18,7 +18,7 @@ class ContainerExceptionTest extends TestCase
     /**
      * @throws ContainerException
      *
-     * @expectedException \Gaetanroger\MinimalSlim3Framework\ContainerException
+     * @expectedException \Gaetanroger\MinimalController\ContainerException
      * @expectedExceptionMessage message
      * @expectedExceptionCode    1
      */

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Gaetanroger\MinimalSlim3Framework;
+namespace Gaetanroger\MinimalController;
 
 use Psr\Container\ContainerExceptionInterface;
 

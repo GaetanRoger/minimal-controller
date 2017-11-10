@@ -1,6 +1,6 @@
 {
-    "name":              "gaetanroger/minimal-slim3-framework",
-    "description":       "Minimal Slim PHP 3 framework",
+    "name":              "gaetanroger/minimal-controller",
+    "description":       "Minimal PHP Controller class",
     "minimum-stability": "stable",
     "license":           "MIT",
     "version":           "0.1",
@@ -23,12 +23,12 @@
     },
     "autoload":          {
         "psr-4": {
-            "Gaetanroger\\MinimalSlim3Framework\\": "src/"
+            "Gaetanroger\\MinimalController\\": "src/"
         }
     },
     "autoload-dev":      {
         "psr-4": {
-            "Gaetanroger\\MinimalSlim3FrameworkTest\\": "test/"
+            "Gaetanroger\\MinimalControllerTest\\": "test/"
         }
     },
     "scripts":           {

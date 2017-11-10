@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Gaetanroger\MinimalSlim3FrameworkTest\Mocks;
+namespace Gaetanroger\MinimalControllerTest\Mocks;
 
 use Psr\Http\Message\ResponseInterface;
 

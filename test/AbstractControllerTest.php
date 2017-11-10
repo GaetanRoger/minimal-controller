@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Gaetanroger\MinimalSlim3FrameworkTest;
+namespace Gaetanroger\MinimalControllerTest;
 
-use Gaetanroger\MinimalSlim3Framework\AbstractController;
-use Gaetanroger\MinimalSlim3FrameworkTest\Mocks\Renderer;
+use Gaetanroger\MinimalController\AbstractController;
+use Gaetanroger\MinimalControllerTest\Mocks\Renderer;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
@@ -82,7 +82,7 @@ class AbstractControllerTest extends TestCase
     }
     
     /**
-     * @expectedException \Gaetanroger\MinimalSlim3Framework\ContainerException
+     * @expectedException \Gaetanroger\MinimalController\ContainerException
      */
     public function testWrongRouterRedirect()
     {
@@ -101,7 +101,7 @@ class AbstractControllerTest extends TestCase
     }
     
     /**
-     * @expectedException \Gaetanroger\MinimalSlim3Framework\ContainerException
+     * @expectedException \Gaetanroger\MinimalController\ContainerException
      */
     public function testWrongRendererRender()
     {
