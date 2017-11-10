@@ -5,11 +5,11 @@ namespace Gaetanroger\MinimalControllerTest;
 
 use Gaetanroger\MinimalController\AbstractController;
 use Gaetanroger\MinimalControllerTest\Mocks\Renderer;
+use Gaetanroger\MinimalControllerTest\Mocks\Router;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
-use Slim\Interfaces\RouterInterface;
 
 
 /**
@@ -128,7 +128,7 @@ class AbstractControllerTest extends TestCase
         $this->emptyResponse = new Response();
         
         // Mocking the RouterInterface to make `pathFor` always return the string "generatedUrl".
-        $routerMock = $this->createMock(RouterInterface::class);
+        $routerMock = $this->createMock(Router::class);
         $routerMock->method('pathFor')->willReturn('generatedUrl');
         
         // Mocking a renderer class to make `render` always return an empty ResponseInterface with stats code 999.
