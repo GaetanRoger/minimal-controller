@@ -1,0 +1,17 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="minimal-slim3-framework">
+            <directory>test</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target=".resource/coverage/html/" lowUpperBound="35"
+             highLowerBound="70"/>
+        <log type="coverage-clover" target=".resource/coverage/clover.xml"/>
+    </logging>
+</phpunit>
