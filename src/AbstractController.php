@@ -4,7 +4,6 @@ namespace Gaetanroger\MinimalSlim3Framework;
 
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
-use Slim\Interfaces\RouterInterface;
 
 
 /**
@@ -59,13 +58,17 @@ abstract class AbstractController
      * @param string            $template
      * @param array             $args
      * @return ResponseInterface
+     * @throws \Psr\Container\ContainerExceptionInterface if object found in container using key
+     *                                                    {@see static::$rendererContainerName} has no "render" method.
+     * @throws \Psr\Container\NotFoundExceptionInterface if key {@see static::$rendererContainerName} was not found in
+     *                                                    container.
      */
     protected function render(ResponseInterface $response, string $template, array $args = []): ResponseInterface
     {
         $renderer = $this->container->get(static::$rendererContainerName);
         
         if (!method_exists($renderer, 'render')) {
-            throw new ContainerException("Object found in container with key " . static::$rendererContainerName . ' does not have a render method.');
+            throw new ContainerException("The object found in container using key " . static::$rendererContainerName . ' has no "render" method.');
         }
         
         return $renderer->render($response, $template, $args);
@@ -78,10 +81,15 @@ abstract class AbstractController
      * `$pathName` which is a public static attribute if this class.
      *
      * @param ResponseInterface $response
-     * @param string            $pathName Name of the path set in the router matching the URL to be redirected to.
+     * @param string            $pathName                 Name of the path set in the router matching the URL to be
+     *                                                    redirected to.
      * @param array             $args
-     * @param int               $code     Redirection code sent in the header status.
+     * @param int               $code                     Redirection code sent in the header status.
      * @return ResponseInterface
+     * @throws \Psr\Container\ContainerExceptionInterface if object found in container using key
+     *                                                    {@see static::$routerContainerName} has no "pathFor" method.
+     * @throws \Psr\Container\NotFoundExceptionInterface if key {@see static::$routerContainerName} was not found in
+     *                                                    container.
      */
     protected function redirect(
         ResponseInterface $response,
@@ -89,13 +97,10 @@ abstract class AbstractController
         array $args,
         int $code = self::MOVED_TEMPORALLY
     ): ResponseInterface {
-        /**
-         * @var RouterInterface
-         */
         $router = $this->container->get(static::$routerContainerName);
         
-        if (!($router instanceof RouterInterface)) {
-            throw new ContainerException("Did not get " . RouterInterface::class . " out of container using key " . static::$routerContainerName . ".");
+        if (!method_exists($router, 'pathFor')) {
+            throw new ContainerException("The object found in container using key " . static::$routerContainerName . " has no \"pathFor\" method.");
         }
         
         /**
