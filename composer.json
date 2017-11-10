@@ -1,0 +1,37 @@
+{
+    "name":              "gaetanroger/minimal-controller",
+    "description":       "Minimal PHP Controller class",
+    "minimum-stability": "stable",
+    "license":           "MIT",
+    "version":           "1.0",
+    "time":              "2017-11-10",
+    "authors":           [
+        {
+            "name":     "Gaétan ROGER",
+            "email":    "gaetanroger.fr@gmail.com",
+            "homepage": "https://gaetanroger.fr"
+        }
+    ],
+    "require":           {
+        "php":           "^7.1",
+        "psr/container": "^1.0"
+    },
+    "require-dev":       {
+        "phpunit/phpunit":             "^6.4",
+        "guzzlehttp/psr7":             "^1.4",
+        "php-coveralls/php-coveralls": "^1.0"
+    },
+    "autoload":          {
+        "psr-4": {
+            "Gaetanroger\\MinimalController\\": "src/"
+        }
+    },
+    "autoload-dev":      {
+        "psr-4": {
+            "Gaetanroger\\MinimalControllerTest\\": "test/"
+        }
+    },
+    "scripts":           {
+        "test": "phpunit"
+    }
+}
