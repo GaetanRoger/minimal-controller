@@ -3,8 +3,8 @@
     "description":       "Minimal PHP Controller class",
     "minimum-stability": "stable",
     "license":           "MIT",
-    "version":           "0.1",
-    "time":              "2017-10-20",
+    "version":           "1.0",
+    "time":              "2017-11-10",
     "authors":           [
         {
             "name":     "Gaétan ROGER",
